@@ -3,18 +3,18 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
-    <changeSet id="create-locations-table" author="sanosysalvos">
+    <changeSet id="crear-tabla-ubicaciones" author="sanosysalvos">
         <createTable tableName="locations">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="mascota_id" type="BIGINT"/>
+            <column name="id_mascota" type="BIGINT"/>
             <column name="latitud" type="DECIMAL(10,8)" nullable="false"/>
             <column name="longitud" type="DECIMAL(11,8)" nullable="false"/>
             <column name="zona_nombre" type="VARCHAR(100)"/>
             <column name="direccion" type="VARCHAR(255)"/>
             <column name="reportado_en" type="TIMESTAMP" nullable="false"/>
-            <column name="zona_id" type="BIGINT">
+            <column name="id_zona" type="BIGINT">
                 <constraints foreignKeyName="fk_location_zone" references="zones(id)" deleteCascade="true"/>
             </column>
             <column name="creado_en" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP"/>
@@ -24,7 +24,7 @@
             <column name="zona_nombre"/>
         </addIndex>
         <addIndex tableName="locations" indexName="idx_location_mascota_id">
-            <column name="mascota_id"/>
+            <column name="id_mascota"/>
         </addIndex>
     </changeSet>
 </databaseChangeLog>

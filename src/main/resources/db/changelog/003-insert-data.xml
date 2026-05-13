@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
-    <changeSet id="insert-zones" author="sanosysalvos">
+    <changeSet id="insertar-zonas" author="sanosysalvos">
         <insert tableName="zones">
             <column name="nombre">Las Condes</column>
             <column name="ciudad">Santiago</column>
@@ -55,114 +55,114 @@
             <column name="conteo_incidencias">3</column>
         </insert>
     </changeSet>
-    <changeSet id="insert-locations" author="sanosysalvos">
+    <changeSet id="insertar-ubicaciones" author="sanosysalvos">
         <insert tableName="locations">
-            <column name="mascota_id">1</column>
+            <column name="id_mascota">1</column>
             <column name="latitud">-33.4092</column>
             <column name="longitud">-70.6425</column>
             <column name="zona_nombre">Las Condes</column>
             <column name="direccion">Av. Alonso de Cordova 4500</column>
             <column name="reportado_en">2024-01-15 10:30:00</column>
-            <column name="zona_id">1</column>
+            <column name="id_zona">1</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">2</column>
+            <column name="id_mascota">2</column>
             <column name="latitud">-33.4317</column>
             <column name="longitud">-70.6183</column>
             <column name="zona_nombre">Providencia</column>
             <column name="direccion">Av. Providencia 1200</column>
             <column name="reportado_en">2024-01-16 14:20:00</column>
-            <column name="zona_id">2</column>
+            <column name="id_zona">2</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">3</column>
+            <column name="id_mascota">3</column>
             <column name="latitud">-33.5097</column>
             <column name="longitud">-70.7650</column>
             <column name="zona_nombre">Maipú</column>
             <column name="direccion">Av. Pajaritos 2500</column>
             <column name="reportado_en">2024-01-17 09:15:00</column>
-            <column name="zona_id">3</column>
+            <column name="id_zona">3</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">4</column>
+            <column name="id_mascota">4</column>
             <column name="latitud">-33.4500</column>
             <column name="longitud">-70.6000</column>
             <column name="zona_nombre">Ñuñoa</column>
             <column name="direccion">Av. Irarrázaval 3000</column>
             <column name="reportado_en">2024-01-18 16:45:00</column>
-            <column name="zona_id">4</column>
+            <column name="id_zona">4</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">5</column>
+            <column name="id_mascota">5</column>
             <column name="latitud">-33.3950</column>
             <column name="longitud">-70.5850</column>
             <column name="zona_nombre">Vitacura</column>
             <column name="direccion">Av. Vitacura 8000</column>
             <column name="reportado_en">2024-01-19 11:00:00</column>
-            <column name="zona_id">5</column>
+            <column name="id_zona">5</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">6</column>
+            <column name="id_mascota">6</column>
             <column name="latitud">-33.5200</column>
             <column name="longitud">-70.6000</column>
             <column name="zona_nombre">La Florida</column>
             <column name="direccion">Av. Walker Martínez 1500</column>
             <column name="reportado_en">2024-01-20 13:30:00</column>
-            <column name="zona_id">6</column>
+            <column name="id_zona">6</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">7</column>
+            <column name="id_mascota">7</column>
             <column name="latitud">-33.4900</column>
             <column name="longitud">-70.6500</column>
             <column name="zona_nombre">Las Condes</column>
             <column name="direccion">Av. Apoquindo 3000</column>
             <column name="reportado_en">2024-01-21 10:00:00</column>
-            <column name="zona_id">1</column>
+            <column name="id_zona">1</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">8</column>
+            <column name="id_mascota">8</column>
             <column name="latitud">-33.4600</column>
             <column name="longitud">-70.6300</column>
             <column name="zona_nombre">Providencia</column>
             <column name="direccion">Av. Pedro de Valdivia 500</column>
             <column name="reportado_en">2024-01-22 15:20:00</column>
-            <column name="zona_id">2</column>
+            <column name="id_zona">2</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">9</column>
+            <column name="id_mascota">9</column>
             <column name="latitud">-33.4400</column>
             <column name="longitud">-70.5800</column>
             <column name="zona_nombre">Ñuñoa</column>
             <column name="direccion">Calle Dario Salas 200</column>
             <column name="reportado_en">2024-01-23 12:10:00</column>
-            <column name="zona_id">4</column>
+            <column name="id_zona">4</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">10</column>
+            <column name="id_mascota">10</column>
             <column name="latitud">-33.3800</column>
             <column name="longitud">-70.5700</column>
             <column name="zona_nombre">Vitacura</column>
             <column name="direccion">Av. Kennedy 9000</column>
             <column name="reportado_en">2024-01-24 14:50:00</column>
-            <column name="zona_id">5</column>
+            <column name="id_zona">5</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">11</column>
+            <column name="id_mascota">11</column>
             <column name="latitud">-33.4800</column>
             <column name="longitud">-70.6200</column>
             <column name="zona_nombre">Las Condes</column>
             <column name="direccion">Av. El Rodeo 1500</column>
             <column name="reportado_en">2024-01-25 09:30:00</column>
-            <column name="zona_id">1</column>
+            <column name="id_zona">1</column>
         </insert>
         <insert tableName="locations">
-            <column name="mascota_id">12</column>
+            <column name="id_mascota">12</column>
             <column name="latitud">-33.5100</column>
             <column name="longitud">-70.7000</column>
             <column name="zona_nombre">Maipú</column>
             <column name="direccion">Av. 5 de Abril 500</column>
             <column name="reportado_en">2024-01-26 11:45:00</column>
-            <column name="zona_id">3</column>
+            <column name="id_zona">3</column>
         </insert>
     </changeSet>
 </databaseChangeLog>

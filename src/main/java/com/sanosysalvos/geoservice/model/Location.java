@@ -11,7 +11,7 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "mascota_id")
+    @Column(name = "id_mascota")
     private Long mascotaId;
 
     @Column(name = "latitud", nullable = false)
@@ -30,7 +30,7 @@ public class Location {
     private LocalDateTime reportadoEn;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "zona_id")
+    @JoinColumn(name = "id_zona")
     private Zone zonaEntity;
 
     @Column(name = "creado_en", nullable = false, updatable = false)
