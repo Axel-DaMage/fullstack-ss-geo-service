@@ -41,11 +41,11 @@ public class LocationService {
         Location location = locationRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Location not found with id: " + id));
 
-        location.setLatitude(locationDetails.getLatitude());
-        location.setLongitude(locationDetails.getLongitude());
-        location.setZone(locationDetails.getZone());
-        location.setAddress(locationDetails.getAddress());
-        location.setPetId(locationDetails.getPetId());
+        location.setLatitud(locationDetails.getLatitud());
+        location.setLongitud(locationDetails.getLongitud());
+        location.setZonaNombre(locationDetails.getZonaNombre());
+        location.setDireccion(locationDetails.getDireccion());
+        location.setMascotaId(locationDetails.getMascotaId());
 
         return locationRepository.save(location);
     }
@@ -58,7 +58,7 @@ public class LocationService {
     }
 
     public List<Location> getLocationsByZone(String zone) {
-        return locationRepository.findByZone(zone);
+        return locationRepository.findByZonaNombre(zone);
     }
 
     public List<Location> getLocationsByDateRange(LocalDateTime startDate, LocalDateTime endDate) {
@@ -66,24 +66,24 @@ public class LocationService {
     }
 
     public long countLocationsByZone(String zone) {
-        return locationRepository.countByZone(zone);
+        return locationRepository.countByZonaNombre(zone);
     }
 
     public List<Location> getLocationsByPetId(Long petId) {
-        return locationRepository.findByPetId(petId);
+        return locationRepository.findByMascotaId(petId);
     }
 
     public Location createLocationWithZone(Double latitude, Double longitude, String zoneName, String city, Long petId) {
-        Zone zone = zoneRepository.findByNameAndCity(zoneName, city)
+        Zone zone = zoneRepository.findByNombreAndCiudad(zoneName, city)
                 .orElseGet(() -> {
                     Zone newZone = new Zone();
-                    newZone.setName(zoneName);
-                    newZone.setCity(city);
-                    newZone.setIncidenceCount(1);
+                    newZone.setNombre(zoneName);
+                    newZone.setCiudad(city);
+                    newZone.setConteoIncidencias(1);
                     return zoneRepository.save(newZone);
                 });
 
-        zone.setIncidenceCount(zone.getIncidenceCount() + 1);
+        zone.setConteoIncidencias(zone.getConteoIncidencias() + 1);
         zoneRepository.save(zone);
 
         return locationFactory.createLocation(latitude, longitude, zoneName, petId);

@@ -7,19 +7,19 @@ import java.time.LocalDateTime;
 @Component
 public class LocationFactory {
 
-    public Location createLocation(Double latitude, Double longitude, String zone, Long petId) {
+    public Location createLocation(Double latitud, Double longitud, String zona, Long mascotaId) {
         Location location = new Location();
-        location.setLatitude(latitude);
-        location.setLongitude(longitude);
-        location.setZone(zone);
-        location.setPetId(petId);
-        location.setReportedAt(LocalDateTime.now());
+        location.setLatitud(latitud);
+        location.setLongitud(longitud);
+        location.setZonaNombre(zona);
+        location.setMascotaId(mascotaId);
+        location.setReportadoEn(LocalDateTime.now());
         return location;
     }
 
-    public Location createLocationWithAddress(Double latitude, Double longitude, String zone, String address, Long petId) {
-        Location location = createLocation(latitude, longitude, zone, petId);
-        location.setAddress(address);
+    public Location createLocationWithAddress(Double latitud, Double longitud, String zona, String direccion, Long mascotaId) {
+        Location location = createLocation(latitud, longitud, zona, mascotaId);
+        location.setDireccion(direccion);
         return location;
     }
 }
