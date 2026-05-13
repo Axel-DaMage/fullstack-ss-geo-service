@@ -69,6 +69,10 @@ public class LocationService {
         return locationRepository.countByZone(zone);
     }
 
+    public List<Location> getLocationsByPetId(Long petId) {
+        return locationRepository.findByPetId(petId);
+    }
+
     public Location createLocationWithZone(Double latitude, Double longitude, String zoneName, String city, Long petId) {
         Zone zone = zoneRepository.findByNameAndCity(zoneName, city)
                 .orElseGet(() -> {
