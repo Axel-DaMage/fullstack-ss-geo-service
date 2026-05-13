@@ -32,11 +32,6 @@ public class LocationController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/health")
-    public ResponseEntity<String> health() {
-        return ResponseEntity.ok("Geo Service is running");
-    }
-
     @PostMapping
     public ResponseEntity<Location> createLocation(@RequestBody Location location) {
         Location createdLocation = locationService.createLocation(location);
@@ -66,6 +61,11 @@ public class LocationController {
     @GetMapping("/search/zone/{zone}")
     public ResponseEntity<List<Location>> getLocationsByZone(@PathVariable String zone) {
         return ResponseEntity.ok(locationService.getLocationsByZone(zone));
+    }
+
+    @GetMapping("/search/pet/{petId}")
+    public ResponseEntity<List<Location>> getLocationsByPetId(@PathVariable Long petId) {
+        return ResponseEntity.ok(locationService.getLocationsByPetId(petId));
     }
 
     @GetMapping("/search/date-range")
