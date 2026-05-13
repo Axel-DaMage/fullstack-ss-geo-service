@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+    <changeSet id="create-locations-table" author="sanosysalvos">
+        <createTable tableName="locations">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="pet_id" type="BIGINT"/>
+            <column name="latitude" type="DECIMAL(10,8)" nullable="false"/>
+            <column name="longitude" type="DECIMAL(11,8)" nullable="false"/>
+            <column name="zone" type="VARCHAR(100)"/>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="reported_at" type="TIMESTAMP" nullable="false"/>
+            <column name="zone_id" type="BIGINT">
+                <constraints foreignKeyName="fk_location_zone" references="zones(id)" deleteCascade="true"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
+        </createTable>
+        <addIndex tableName="locations" indexName="idx_location_zone">
+            <column name="zone"/>
+        </addIndex>
+        <addIndex tableName="locations" indexName="idx_location_pet_id">
+            <column name="pet_id"/>
+        </addIndex>
+    </changeSet>
+</databaseChangeLog>
