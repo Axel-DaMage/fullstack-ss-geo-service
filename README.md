@@ -80,3 +80,11 @@ mvn test
 - Proporciona búsquedas por rango de fechas para análisis temporal de incidentes.
 - Incluye endpoint para obtener estadísticas de incidentes por zona.
 - Utiliza auditoría automática mediante @PrePersist y @PreUpdate.
+
+---
+
+## Despliegue
+
+Este servicio se despliega automáticamente como parte del repositorio **pet-service** a la instancia **Backend (t3.medium)**.
+
+Ver [Setup Guide](../fullstack-ss-pet-service/README.md#despliegue-en-aws-ec2) para detalles completos de la infraestructura.
