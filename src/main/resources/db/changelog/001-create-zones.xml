@@ -8,11 +8,11 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="name" type="VARCHAR(100)" nullable="false"/>
-            <column name="city" type="VARCHAR(100)"/>
-            <column name="incidence_count" type="INT" defaultValue="0"/>
-            <column name="created_at" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="updated_at" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
+            <column name="nombre" type="VARCHAR(100)" nullable="false"/>
+            <column name="ciudad" type="VARCHAR(100)"/>
+            <column name="conteo_incidencias" type="INT" defaultValue="0"/>
+            <column name="creado_en" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="actualizado_en" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

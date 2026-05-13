@@ -11,75 +11,75 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "pet_id")
-    private Long petId;
+    @Column(name = "mascota_id")
+    private Long mascotaId;
 
-    @Column(nullable = false)
-    private Double latitude;
+    @Column(name = "latitud", nullable = false)
+    private Double latitud;
 
-    @Column(nullable = false)
-    private Double longitude;
+    @Column(name = "longitud", nullable = false)
+    private Double longitud;
 
-    @Column(length = 100)
-    private String zone;
+    @Column(name = "zona_nombre", length = 100)
+    private String zonaNombre;
 
-    @Column(length = 255)
-    private String address;
+    @Column(name = "direccion", length = 255)
+    private String direccion;
 
-    @Column(name = "reported_at", nullable = false)
-    private LocalDateTime reportedAt;
+    @Column(name = "reportado_en", nullable = false)
+    private LocalDateTime reportadoEn;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "zone_id")
-    private Zone zoneEntity;
+    @JoinColumn(name = "zona_id")
+    private Zone zonaEntity;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "creado_en", nullable = false, updatable = false)
+    private LocalDateTime creadoEn;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    @Column(name = "actualizado_en")
+    private LocalDateTime actualizadoEn;
 
     @PrePersist
     protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-        if (reportedAt == null) {
-            reportedAt = LocalDateTime.now();
+        creadoEn = LocalDateTime.now();
+        actualizadoEn = LocalDateTime.now();
+        if (reportadoEn == null) {
+            reportadoEn = LocalDateTime.now();
         }
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
+        actualizadoEn = LocalDateTime.now();
     }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public Long getPetId() { return petId; }
-    public void setPetId(Long petId) { this.petId = petId; }
+    public Long getMascotaId() { return mascotaId; }
+    public void setMascotaId(Long mascotaId) { this.mascotaId = mascotaId; }
 
-    public Double getLatitude() { return latitude; }
-    public void setLatitude(Double latitude) { this.latitude = latitude; }
+    public Double getLatitud() { return latitud; }
+    public void setLatitud(Double latitud) { this.latitud = latitud; }
 
-    public Double getLongitude() { return longitude; }
-    public void setLongitude(Double longitude) { this.longitude = longitude; }
+    public Double getLongitud() { return longitud; }
+    public void setLongitud(Double longitud) { this.longitud = longitud; }
 
-    public String getZone() { return zone; }
-    public void setZone(String zone) { this.zone = zone; }
+    public String getZonaNombre() { return zonaNombre; }
+    public void setZonaNombre(String zonaNombre) { this.zonaNombre = zonaNombre; }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public String getDireccion() { return direccion; }
+    public void setDireccion(String direccion) { this.direccion = direccion; }
 
-    public LocalDateTime getReportedAt() { return reportedAt; }
-    public void setReportedAt(LocalDateTime reportedAt) { this.reportedAt = reportedAt; }
+    public LocalDateTime getReportadoEn() { return reportadoEn; }
+    public void setReportadoEn(LocalDateTime reportadoEn) { this.reportadoEn = reportadoEn; }
 
-    public Zone getZoneEntity() { return zoneEntity; }
-    public void setZoneEntity(Zone zoneEntity) { this.zoneEntity = zoneEntity; }
+    public Zone getZonaEntity() { return zonaEntity; }
+    public void setZonaEntity(Zone zonaEntity) { this.zonaEntity = zonaEntity; }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public LocalDateTime getCreadoEn() { return creadoEn; }
+    public void setCreadoEn(LocalDateTime creadoEn) { this.creadoEn = creadoEn; }
 
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
-    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    public LocalDateTime getActualizadoEn() { return actualizadoEn; }
+    public void setActualizadoEn(LocalDateTime actualizadoEn) { this.actualizadoEn = actualizadoEn; }
 }
