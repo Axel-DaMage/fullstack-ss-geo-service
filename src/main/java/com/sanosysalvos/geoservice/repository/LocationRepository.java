@@ -11,13 +11,13 @@ import java.util.List;
 @Repository
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
-    List<Location> findByZone(String zone);
+    List<Location> findByZonaNombre(String zona);
 
-    List<Location> findByPetId(Long petId);
+    List<Location> findByMascotaId(Long mascotaId);
 
-    @Query("SELECT l FROM Location l WHERE l.reportedAt BETWEEN :startDate AND :endDate")
+    @Query("SELECT l FROM Location l WHERE l.reportadoEn BETWEEN :startDate AND :endDate")
     List<Location> findByDateRange(@Param("startDate") LocalDateTime startDate,
                                     @Param("endDate") LocalDateTime endDate);
 
-    long countByZone(String zone);
+    long countByZonaNombre(String zona);
 }

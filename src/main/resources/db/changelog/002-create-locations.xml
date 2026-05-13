@@ -8,23 +8,23 @@
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="pet_id" type="BIGINT"/>
-            <column name="latitude" type="DECIMAL(10,8)" nullable="false"/>
-            <column name="longitude" type="DECIMAL(11,8)" nullable="false"/>
-            <column name="zone" type="VARCHAR(100)"/>
-            <column name="address" type="VARCHAR(255)"/>
-            <column name="reported_at" type="TIMESTAMP" nullable="false"/>
-            <column name="zone_id" type="BIGINT">
+            <column name="mascota_id" type="BIGINT"/>
+            <column name="latitud" type="DECIMAL(10,8)" nullable="false"/>
+            <column name="longitud" type="DECIMAL(11,8)" nullable="false"/>
+            <column name="zona_nombre" type="VARCHAR(100)"/>
+            <column name="direccion" type="VARCHAR(255)"/>
+            <column name="reportado_en" type="TIMESTAMP" nullable="false"/>
+            <column name="zona_id" type="BIGINT">
                 <constraints foreignKeyName="fk_location_zone" references="zones(id)" deleteCascade="true"/>
             </column>
-            <column name="created_at" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="updated_at" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
+            <column name="creado_en" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="actualizado_en" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
         </createTable>
-        <addIndex tableName="locations" indexName="idx_location_zone">
-            <column name="zone"/>
+        <addIndex tableName="locations" indexName="idx_location_zona">
+            <column name="zona_nombre"/>
         </addIndex>
-        <addIndex tableName="locations" indexName="idx_location_pet_id">
-            <column name="pet_id"/>
+        <addIndex tableName="locations" indexName="idx_location_mascota_id">
+            <column name="mascota_id"/>
         </addIndex>
     </changeSet>
 </databaseChangeLog>
