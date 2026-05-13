@@ -8,7 +8,7 @@ import java.util.Optional;
 @Repository
 public interface ZoneRepository extends JpaRepository<Zone, Long> {
 
-    Optional<Zone> findByName(String name);
+    Optional<Zone> findByNombre(String nombre);
 
-    Optional<Zone> findByNameAndCity(String name, String city);
+    Optional<Zone> findByNombreAndCiudad(String nombre, String ciudad);
 }

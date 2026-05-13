@@ -12,56 +12,56 @@ public class Zone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
-    private String name;
+    @Column(name = "nombre", nullable = false, length = 100)
+    private String nombre;
 
-    @Column(length = 100)
-    private String city;
+    @Column(name = "ciudad", length = 100)
+    private String ciudad;
 
-    @Column(name = "incidence_count")
-    private Integer incidenceCount;
+    @Column(name = "conteo_incidencias")
+    private Integer conteoIncidencias;
 
-    @OneToMany(mappedBy = "zoneEntity", fetch = FetchType.LAZY)
-    private List<Location> locations;
+    @OneToMany(mappedBy = "zona", fetch = FetchType.LAZY)
+    private List<Location> ubicaciones;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "creado_en", nullable = false, updatable = false)
+    private LocalDateTime creadoEn;
 
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    @Column(name = "actualizado_en")
+    private LocalDateTime actualizadoEn;
 
     @PrePersist
     protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-        if (incidenceCount == null) {
-            incidenceCount = 0;
+        creadoEn = LocalDateTime.now();
+        actualizadoEn = LocalDateTime.now();
+        if (conteoIncidencias == null) {
+            conteoIncidencias = 0;
         }
     }
 
     @PreUpdate
     protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
+        actualizadoEn = LocalDateTime.now();
     }
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public String getCity() { return city; }
-    public void setCity(String city) { this.city = city; }
+    public String getCiudad() { return ciudad; }
+    public void setCiudad(String ciudad) { this.ciudad = ciudad; }
 
-    public Integer getIncidenceCount() { return incidenceCount; }
-    public void setIncidenceCount(Integer incidenceCount) { this.incidenceCount = incidenceCount; }
+    public Integer getConteoIncidencias() { return conteoIncidencias; }
+    public void setConteoIncidencias(Integer conteoIncidencias) { this.conteoIncidencias = conteoIncidencias; }
 
-    public List<Location> getLocations() { return locations; }
-    public void setLocations(List<Location> locations) { this.locations = locations; }
+    public List<Location> getUbicaciones() { return ubicaciones; }
+    public void setUbicaciones(List<Location> ubicaciones) { this.ubicaciones = ubicaciones; }
 
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public LocalDateTime getCreadoEn() { return creadoEn; }
+    public void setCreadoEn(LocalDateTime creadoEn) { this.creadoEn = creadoEn; }
 
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
-    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
+    public LocalDateTime getActualizadoEn() { return actualizadoEn; }
+    public void setActualizadoEn(LocalDateTime actualizadoEn) { this.actualizadoEn = actualizadoEn; }
 }
