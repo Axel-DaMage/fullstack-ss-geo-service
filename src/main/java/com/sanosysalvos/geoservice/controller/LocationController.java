@@ -32,6 +32,11 @@ public class LocationController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("Geo Service is running");
+    }
+
     @PostMapping
     public ResponseEntity<Location> createLocation(@RequestBody Location location) {
         Location createdLocation = locationService.createLocation(location);
