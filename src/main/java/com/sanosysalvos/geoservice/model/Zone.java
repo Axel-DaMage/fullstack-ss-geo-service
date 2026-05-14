@@ -1,11 +1,14 @@
 package com.sanosysalvos.geoservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "zones")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Zone {
 
     @Id
@@ -21,7 +24,8 @@ public class Zone {
     @Column(name = "conteo_incidencias")
     private Integer conteoIncidencias;
 
-    @OneToMany(mappedBy = "zona", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "zonaEntity", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Location> ubicaciones;
 
     @Column(name = "creado_en", nullable = false, updatable = false)

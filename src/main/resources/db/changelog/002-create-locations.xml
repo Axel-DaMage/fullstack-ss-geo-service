@@ -9,22 +9,22 @@
                 <constraints primaryKey="true"/>
             </column>
             <column name="id_mascota" type="BIGINT"/>
-            <column name="latitud" type="DECIMAL(10,8)" nullable="false"/>
-            <column name="longitud" type="DECIMAL(11,8)" nullable="false"/>
+            <column name="latitud" type="DECIMAL(10,8)"><constraints nullable="false"/></column>
+            <column name="longitud" type="DECIMAL(11,8)"><constraints nullable="false"/></column>
             <column name="zona_nombre" type="VARCHAR(100)"/>
             <column name="direccion" type="VARCHAR(255)"/>
-            <column name="reportado_en" type="TIMESTAMP" nullable="false"/>
+            <column name="reportado_en" type="TIMESTAMP"><constraints nullable="false"/></column>
             <column name="id_zona" type="BIGINT">
                 <constraints foreignKeyName="fk_location_zone" references="zones(id)" deleteCascade="true"/>
             </column>
-            <column name="creado_en" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP"/>
-            <column name="actualizado_en" type="TIMESTAMP" nullable="false" defaultValueComputed="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"/>
+            <column name="creado_en" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP"><constraints nullable="false"/></column>
+            <column name="actualizado_en" type="TIMESTAMP" defaultValueComputed="CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"><constraints nullable="false"/></column>
         </createTable>
-        <addIndex tableName="locations" indexName="idx_location_zona">
+        <createIndex tableName="locations" indexName="idx_location_zona">
             <column name="zona_nombre"/>
-        </addIndex>
-        <addIndex tableName="locations" indexName="idx_location_mascota_id">
+        </createIndex>
+        <createIndex tableName="locations" indexName="idx_location_mascota_id">
             <column name="id_mascota"/>
-        </addIndex>
+        </createIndex>
     </changeSet>
 </databaseChangeLog>

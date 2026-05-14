@@ -1,10 +1,13 @@
 package com.sanosysalvos.geoservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "locations")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Location {
 
     @Id
@@ -32,6 +35,10 @@ public class Location {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_zona")
     private Zone zonaEntity;
+
+    @JsonIgnore
+    public Zone getZona() { return zonaEntity; }
+    public void setZona(Zone zona) { this.zonaEntity = zona; }
 
     @Column(name = "creado_en", nullable = false, updatable = false)
     private LocalDateTime creadoEn;
