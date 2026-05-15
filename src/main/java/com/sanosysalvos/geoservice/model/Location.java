@@ -2,6 +2,7 @@ package com.sanosysalvos.geoservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -18,18 +19,23 @@ public class Location {
     private Long mascotaId;
 
     @Column(name = "latitud", nullable = false)
+    @JsonProperty("latitude")
     private Double latitud;
 
     @Column(name = "longitud", nullable = false)
+    @JsonProperty("longitude")
     private Double longitud;
 
     @Column(name = "zona_nombre", length = 100)
+    @JsonProperty("zone")
     private String zonaNombre;
 
     @Column(name = "direccion", length = 255)
+    @JsonProperty("address")
     private String direccion;
 
     @Column(name = "reportado_en", nullable = false)
+    @JsonProperty("reportedAt")
     private LocalDateTime reportadoEn;
 
     @ManyToOne(fetch = FetchType.LAZY)
