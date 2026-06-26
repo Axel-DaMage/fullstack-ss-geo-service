@@ -79,7 +79,7 @@ class LocationControllerTest {
                 .content(objectMapper.writeValueAsString(loc)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.zonaNombre", is("Centro")));
+                .andExpect(jsonPath("$.zone", is("Centro")));
     }
 
     @Test
@@ -98,7 +98,7 @@ class LocationControllerTest {
                 .content(objectMapper.writeValueAsString(loc)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.zonaNombre", is("Sur")));
+                .andExpect(jsonPath("$.zone", is("Sur")));
     }
 
     @Test
