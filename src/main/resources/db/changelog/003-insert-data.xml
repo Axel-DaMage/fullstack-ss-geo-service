@@ -114,10 +114,10 @@
             <column name="id_mascota">7</column>
             <column name="latitud">-33.4900</column>
             <column name="longitud">-70.6500</column>
-            <column name="zona_nombre">Las Condes</column>
-            <column name="direccion">Av. Apoquindo 3000</column>
+            <column name="zona_nombre">San Miguel</column>
+            <column name="direccion">Gran Avenida 4500</column>
             <column name="reportado_en">2024-01-21 10:00:00</column>
-            <column name="id_zona">1</column>
+            <column name="id_zona">7</column>
         </insert>
         <insert tableName="locations">
             <column name="id_mascota">8</column>
@@ -150,10 +150,10 @@
             <column name="id_mascota">11</column>
             <column name="latitud">-33.4800</column>
             <column name="longitud">-70.6200</column>
-            <column name="zona_nombre">Las Condes</column>
-            <column name="direccion">Av. El Rodeo 1500</column>
+            <column name="zona_nombre">San Miguel</column>
+            <column name="direccion">Av. Departamental 1200</column>
             <column name="reportado_en">2024-01-25 09:30:00</column>
-            <column name="id_zona">1</column>
+            <column name="id_zona">7</column>
         </insert>
         <insert tableName="locations">
             <column name="id_mascota">12</column>

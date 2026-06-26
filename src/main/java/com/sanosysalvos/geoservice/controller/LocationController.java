@@ -77,7 +77,7 @@ public class LocationController {
 
     @GetMapping("/totals/zone")
     public ResponseEntity<Map<String, Long>> getTotalsByZone() {
-        List<String> zones = List.of("Las Condes", "Providencia", "Maipú", "Ñuñoa", "Vitacura");
+        List<String> zones = List.of("Las Condes", "Providencia", "Maipú", "Ñuñoa", "Vitacura", "La Florida", "San Miguel", "Pudahuel", "Peñalolén", "San Bernardo");
         Map<String, Long> totals = new java.util.HashMap<>();
         for (String zone : zones) {
             totals.put(zone, locationService.countLocationsByZone(zone));
