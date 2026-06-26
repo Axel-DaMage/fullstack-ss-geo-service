@@ -69,6 +69,7 @@ public class Location {
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
+    @JsonProperty("petId")
     public Long getMascotaId() { return mascotaId; }
     public void setMascotaId(Long mascotaId) { this.mascotaId = mascotaId; }
 
